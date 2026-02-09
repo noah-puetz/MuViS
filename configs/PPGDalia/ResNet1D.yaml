@@ -1,0 +1,20 @@
+experiment_type: nn
+Architecture:
+  class: ResNet1D
+  parameters:
+    output_size: 1
+    num_filters: 256
+    fc_units: 512
+    num_res_blocks: 4
+    dropout1: 0.06427353533832748
+    dropout2: 0.016608026625336968
+Training:
+  seed: 42
+  dataset_id: PPGDalia
+  dataset_class: SequentialDataset
+  batch_size: 256
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.009463628869200815
+  loss_function: MSELoss

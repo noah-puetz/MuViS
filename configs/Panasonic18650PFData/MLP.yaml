@@ -1,0 +1,18 @@
+experiment_type: nn
+Architecture:
+  class: MLP
+  parameters:
+    output_size: 1
+    num_hidden_layers: 4
+    hidden_dim: 512
+    dropout_hidden: 0.0007499265602986501
+Training:
+  seed: 42
+  dataset_id: Panasonic18650PFData
+  dataset_class: FlattenedDataset
+  batch_size: 256
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.00030097177955038077
+  loss_function: MSELoss

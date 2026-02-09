@@ -1,0 +1,20 @@
+experiment_type: nn
+Architecture:
+  class: LSTM
+  parameters:
+    output_size: 1
+    hidden_size: 128
+    fc_units: 128
+    num_layers: 1
+    dropout1: 0.1952064145575159
+    dropout2: 0.1335987926194304
+Training:
+  seed: 42
+  dataset_id: BeijingPM10Quality
+  dataset_class: SequentialDataset
+  batch_size: 256
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.0010663478824484494
+  loss_function: MSELoss

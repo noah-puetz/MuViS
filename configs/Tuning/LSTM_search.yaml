@@ -1,0 +1,28 @@
+search_space:
+  Architecture.parameters.hidden_size:
+    type: categorical
+    choices: [32, 64, 128, 256, 512]
+
+  Architecture.parameters.fc_units:
+    type: categorical
+    choices: [32, 64, 128, 256, 512]
+
+  Architecture.parameters.num_layers:
+    type: int
+    low: 1
+    high: 3
+
+  Architecture.parameters.dropout1:
+    type: float
+    low: 0.0
+    high: 0.2
+
+  Architecture.parameters.dropout2:
+    type: float
+    low: 0.0
+    high: 0.2
+    
+  Training.optimizer_params.lr:
+    type: float
+    low: 0.0001
+    high: 0.01

@@ -1,0 +1,18 @@
+experiment_type: nn
+Architecture:
+  class: MLP
+  parameters:
+    output_size: 1
+    num_hidden_layers: 3
+    hidden_dim: 512
+    dropout_hidden: 0.004554829635006525
+Training:
+  seed: 42
+  dataset_id: PPGDalia
+  dataset_class: FlattenedDataset
+  batch_size: 256
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.0032368518095125787
+  loss_function: MSELoss

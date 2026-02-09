@@ -1,0 +1,23 @@
+experiment_type: nn
+Architecture:
+  class: Transformer
+  parameters:
+    seq_len: 20
+    d_model: 256
+    n_heads: 4
+    num_layers: 4
+    est_head_dim: 128
+    output_size: 1
+    dropout_rate: 0.03808373260083916
+    est_head_dropout: 0.006063839145161318
+    activation: "relu"
+Training:
+  seed: 42
+  dataset_id: "REVS/2013_Targa_Sixty_Six"
+  dataset_class: SequentialDataset
+  batch_size: 256
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.0003998502455248673
+  loss_function: MSELoss

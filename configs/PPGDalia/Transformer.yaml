@@ -1,0 +1,23 @@
+experiment_type: nn
+Architecture:
+  class: Transformer
+  parameters:
+    seq_len: 512
+    d_model: 256
+    n_heads: 4
+    num_layers: 4
+    est_head_dim: 128
+    output_size: 1
+    dropout_rate: 0.030826734307600176
+    est_head_dropout: 0.005558454168578763
+    activation: "relu"
+Training:
+  seed: 42
+  dataset_id: PPGDalia
+  dataset_class: SequentialDataset
+  batch_size: 256
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.0002310606315621092
+  loss_function: MSELoss

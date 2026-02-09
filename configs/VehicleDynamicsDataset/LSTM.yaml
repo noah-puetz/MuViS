@@ -1,0 +1,20 @@
+experiment_type: nn
+Architecture:
+  class: LSTM
+  parameters:
+    output_size: 1
+    hidden_size: 32
+    fc_units: 256
+    num_layers: 3
+    dropout1: 0.000947439214514078
+    dropout2: 0.029850114051460416
+Training:
+  seed: 42
+  dataset_id: "VehicleDynamicsDataset"
+  dataset_class: SequentialDataset
+  batch_size: 32
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.003627258795378973
+  loss_function: MSELoss

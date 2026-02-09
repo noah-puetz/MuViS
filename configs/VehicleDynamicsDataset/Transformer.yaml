@@ -1,0 +1,23 @@
+experiment_type: nn
+Architecture:
+  class: Transformer
+  parameters:
+    seq_len: 50
+    d_model: 64
+    n_heads: 8
+    num_layers: 4
+    est_head_dim: 256
+    output_size: 1
+    dropout_rate: 0.0011384037333127765
+    est_head_dropout: 0.014110123413717349
+    activation: "relu"
+Training:
+  seed: 42
+  dataset_id: "VehicleDynamicsDataset"
+  dataset_class: SequentialDataset
+  batch_size: 32
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.0004663440898532492
+  loss_function: MSELoss

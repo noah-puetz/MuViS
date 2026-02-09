@@ -1,0 +1,20 @@
+experiment_type: nn
+Architecture:
+  class: LSTM
+  parameters:
+    output_size: 1
+    hidden_size: 512
+    fc_units: 512
+    num_layers: 3
+    dropout1: 0.17381857523008132
+    dropout2: 0.03760097455867888
+Training:
+  seed: 42
+  dataset_id: Panasonic18650PFData
+  dataset_class: SequentialDataset
+  batch_size: 256
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.0003245226400600507
+  loss_function: MSELoss

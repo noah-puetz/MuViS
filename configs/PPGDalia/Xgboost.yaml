@@ -1,0 +1,13 @@
+experiment_type: tree
+Architecture:
+  class: XGBRegressor
+  parameters:
+    n_estimators: 3000
+    learning_rate: 0.014220547016456192
+    max_depth: 9
+    subsample: 0.9482338146595268
+    colsample_bytree: 0.5291872239406469
+    reg_lambda: 3.0084064728627276
+Training:
+  seed: 42
+  dataset_id: PPGDalia

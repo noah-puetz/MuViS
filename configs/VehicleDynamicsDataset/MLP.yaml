@@ -1,0 +1,18 @@
+experiment_type: nn
+Architecture:
+  class: MLP
+  parameters:
+    output_size: 1
+    num_hidden_layers: 1
+    hidden_dim: 128
+    dropout_hidden: 0.0014360421265207485
+Training:
+  seed: 42
+  dataset_id: "VehicleDynamicsDataset"
+  dataset_class: FlattenedDataset
+  batch_size: 32
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.004745134742750257
+  loss_function: MSELoss

@@ -1,0 +1,23 @@
+experiment_type: nn
+Architecture:
+  class: Transformer
+  parameters:
+    seq_len: 24
+    d_model: 128
+    n_heads: 8
+    num_layers: 4
+    est_head_dim: 256
+    output_size: 1
+    dropout_rate: 0.05958475884828283
+    est_head_dropout: 0.011530386884772693
+    activation: "relu"
+Training:
+  seed: 42
+  dataset_id: BeijingPM10Quality
+  dataset_class: SequentialDataset
+  batch_size: 256
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.0003124978134674377
+  loss_function: MSELoss

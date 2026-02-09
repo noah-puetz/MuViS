@@ -1,0 +1,19 @@
+search_space:
+  Architecture.parameters.num_hidden_layers:
+    type: int
+    low: 1
+    high: 4
+
+  Architecture.parameters.hidden_dim:
+    type: categorical
+    choices: [32, 64, 128, 256, 512]
+
+  Architecture.parameters.dropout_hidden:
+    type: float
+    low: 0.0
+    high: 0.2
+
+  Training.optimizer_params.lr:
+    type: float
+    low: 0.0001
+    high: 0.01

@@ -1,0 +1,14 @@
+data/raw/*
+data/processed/*
+
+*.egg-info/
+__pycache__/
+
+logs/
+
+.DS_Store
+db.*
+
+.vscode/
+
+archive/*

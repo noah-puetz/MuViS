@@ -1,0 +1,20 @@
+experiment_type: nn
+Architecture:
+  class: LSTM
+  parameters:
+    output_size: 1
+    hidden_size: 512
+    fc_units: 512
+    num_layers: 3
+    dropout1: 0.11846161230613117
+    dropout2: 0.06350805209419969
+Training:
+  seed: 42
+  dataset_id: "REVS/2014_Targa_Sixty_Six"
+  dataset_class: SequentialDataset
+  batch_size: 256
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.0002318140666081561
+  loss_function: MSELoss

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "muvis"
+version = "0.0.1"
+description = "MuViS: Multimodal Virtual Sensing Benchmark"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.13"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "catboost",
+    "matplotlib",
+    "numpy",
+    "optuna",
+    "pandas",
+    "pyreadr",
+    "scikit-base",
+    "scikit-learn",
+    "scipy",
+    "sktime",
+    "sympy",
+    "torch",
+    "tqdm",
+    "xgboost",
+    "PyYAML",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["muvis*"]

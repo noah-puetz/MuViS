@@ -1,0 +1,20 @@
+experiment_type: nn
+Architecture:
+  class: LSTM
+  parameters:
+    output_size: 1
+    hidden_size: 256
+    fc_units: 512
+    num_layers: 3
+    dropout1: 0.19131139102229627
+    dropout2: 0.11792039837954295
+Training:
+  seed: 42
+  dataset_id: TennesseeEastmanProcess
+  dataset_class: SequentialDataset
+  batch_size: 256
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.0006589005284990479
+  loss_function: MSELoss

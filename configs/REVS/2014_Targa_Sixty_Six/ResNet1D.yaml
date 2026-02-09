@@ -1,0 +1,20 @@
+experiment_type: nn
+Architecture:
+  class: ResNet1D
+  parameters:
+    output_size: 1
+    num_filters: 256
+    fc_units: 32
+    num_res_blocks: 4
+    dropout1: 0.035952502887307065
+    dropout2: 0.0005282981411311501
+Training:
+  seed: 42
+  dataset_id: "REVS/2014_Targa_Sixty_Six"
+  dataset_class: SequentialDataset
+  batch_size: 256
+  num_epochs: 100
+  optimizer: Adam
+  optimizer_params:
+    lr: 0.007524135545617407
+  loss_function: MSELoss
