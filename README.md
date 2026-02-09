@@ -22,7 +22,7 @@ Model-specific preprocessing operations (e.g., standardization, sequence flatten
 ## Datasets
 
 <p align="center">
-  <img src="assets/Figure_2.png" alt="MuViS Pipeline" width="1000"/>
+  <img src="assets/figure_2.png" alt="MuViS Pipeline" width="1000"/>
 </p>
 
 MuViS aggregates six benchmark datasets spanning environmental monitoring, health sensing, vehicle dynamics, tire thermodynamics, chemical process monitoring, and electrochemical energy systems.
