@@ -33,8 +33,8 @@ MuViS aggregates six benchmark datasets spanning environmental monitoring, healt
 | **Revs Program** | Automotive | Lateral Velocity ($v_y$) | Driver inputs, IMU, Wheel speeds | 12 | 20 |
 | **Tire Temperature** | Automotive | Tire Temp ($t_{tire}$) | Vehicle motion, Control inputs | 11 | 50 |
 | **Tennessee Eastman** | Industrial | Chemical Conc. | Process vars & Manipulated vars | 33 | 20 |
-| **Panasonic 18650PF** | Energy | State-of-Charge (SoC) | Voltage, Current, Temp | 7 | 500 |
-| **PPG-DaLiA** | Health | Heart Rate (BPM) | BVP, EDA, Temp, Accel | 6 | 256 |
+| **Panasonic 18650PF** | Energy | State-of-Charge (SoC) | Voltage, Current, Temp | 7 | 120 |
+| **PPG-DaLiA** | Health | Heart Rate (BPM) | BVP, EDA, Temp, Accel | 6 | 512 |
 
 ## Baselines
 
