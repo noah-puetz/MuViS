@@ -685,3 +685,72 @@ class PPGDaliaConverter(BaseConverter):
             act_list.append(act)
 
         return np.stack(X_list), np.asarray(y_list), np.asarray(act_list)
+
+
+class PPGDaliaConverterRandomSplit(PPGDaliaConverter):
+    """Like PPGDaliaConverter but uses a random 80/20 train/test split
+    instead of a fixed subject-based split."""
+
+    def __init__(self,
+                 raw_dir: str,
+                 output_dir: str,
+                 sequence_length: int = 512,
+                 sequence_step: int = 128,
+                 test_ratio: float = 0.2,
+                 random_seed: int = 42):
+        super().__init__(raw_dir, output_dir, sequence_length, sequence_step)
+        self.test_ratio = test_ratio
+        self.random_seed = random_seed
+
+    def load_raw(self) -> Tuple[Dict[str, List[Dict]], Dict]:
+        all_cases = []
+        activities = []
+
+        for subject_id in tqdm(range(1, 16), desc="Processing PPG-DaLiA"):
+            path = self.raw_dir / f"S{subject_id}" / f"S{subject_id}.pkl"
+            if not path.exists():
+                continue
+
+            with open(path, "rb") as f:
+                data = pickle.load(f, encoding="latin1")
+
+            if isinstance(data, dict) and "data" in data:
+                data = data["data"]
+
+            X, y, act = self._make_windows(data)
+
+            for k in range(len(y)):
+                case = {
+                    "wrist_BVP":   pd.Series(X[k, :, 0]),
+                    "wrist_ACC_x": pd.Series(X[k, :, 1]),
+                    "wrist_ACC_y": pd.Series(X[k, :, 2]),
+                    "wrist_ACC_z": pd.Series(X[k, :, 3]),
+                    "wrist_EDA":   pd.Series(X[k, :, 4]),
+                    "wrist_TEMP":  pd.Series(X[k, :, 5]),
+                    "target_val":  y[k],
+                }
+                all_cases.append(case)
+                activities.append(int(act[k]))
+
+        # Random 80/20 split on windows
+        rng = np.random.default_rng(self.random_seed)
+        n = len(all_cases)
+        indices = rng.permutation(n)
+        n_test = int(np.ceil(n * self.test_ratio))
+        test_idx = set(indices[:n_test])
+
+        split_cases: Dict[str, List[Dict]] = {"train": [], "test": []}
+        split_activities = []
+        for i, case in enumerate(all_cases):
+            split = "test" if i in test_idx else "train"
+            split_cases[split].append(case)
+            split_activities.append(activities[i])
+
+        self._activities = np.asarray(split_activities, dtype=np.int16)
+
+        meta = {
+            "feature_names": self.feature_names,
+            "target_name": self.target_name,
+            "n_features": len(self.feature_names),
+        }
+        return split_cases, meta
