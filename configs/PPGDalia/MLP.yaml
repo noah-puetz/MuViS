@@ -5,7 +5,7 @@ Architecture:
     output_size: 1
     num_hidden_layers: 3
     hidden_dim: 512
-    dropout_hidden: 0.004554829635006525
+    dropout_hidden: 0.0003369943830253061
 Training:
   seed: 42
   dataset_id: PPGDalia
@@ -14,5 +14,5 @@ Training:
   num_epochs: 100
   optimizer: Adam
   optimizer_params:
-    lr: 0.0032368518095125787
+    lr: 0.001600896852544221
   loss_function: MSELoss

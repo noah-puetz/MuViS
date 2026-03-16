@@ -6,8 +6,8 @@ Architecture:
     num_filters: 256
     fc_units: 512
     num_res_blocks: 4
-    dropout1: 0.06427353533832748
-    dropout2: 0.016608026625336968
+    dropout1: 0.009345025497327495
+    dropout2: 0.004089601590112249
 Training:
   seed: 42
   dataset_id: PPGDalia
@@ -16,5 +16,5 @@ Training:
   num_epochs: 100
   optimizer: Adam
   optimizer_params:
-    lr: 0.009463628869200815
+    lr: 0.009769203376399171
   loss_function: MSELoss

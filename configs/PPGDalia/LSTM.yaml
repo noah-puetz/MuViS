@@ -3,11 +3,11 @@ Architecture:
   class: LSTM
   parameters:
     output_size: 1
-    hidden_size: 128
+    hidden_size: 256
     fc_units: 256
-    num_layers: 3
-    dropout1: 0.03774066229563841
-    dropout2: 0.01072662850860337
+    num_layers: 1
+    dropout1: 0.007535060907122533
+    dropout2: 0.022013546593584968
 Training:
   seed: 42
   dataset_id: PPGDalia
@@ -16,5 +16,5 @@ Training:
   num_epochs: 100
   optimizer: Adam
   optimizer_params:
-    lr: 0.0013755353532262462
+    lr: 0.0008947966507623329
   loss_function: MSELoss
