@@ -7,7 +7,7 @@ from muvis.data_utils.converters import (REVSConverter,
                                          TennesseeEastmanProcessConverter, 
                                          BeijingPMQualityConverter,
                                          Panasonic18650PFConverter, 
-                                         PPGDaliaConverter)
+                                         PPGDaliaConverterRandomSplit)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Preprocess datasets")
@@ -87,7 +87,7 @@ if __name__ == "__main__":
         logging.info("Finished processing Panasonic18650PF dataset.")
         
     if args.datasets == "all" or args.datasets == "PPGDalia":
-        PPGDaliaConverter(
+        PPGDaliaConverterRandomSplit(
             raw_dir=os.path.join(args.raw_folder, "PPGDalia/PPG_FieldStudy"),
             output_dir=os.path.join(args.processed_folder, "PPGDalia"),
             sequence_length=512,
