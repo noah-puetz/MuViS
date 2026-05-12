@@ -4,7 +4,7 @@
 
 # MuViS: Multimodal Virtual Sensing Benchmark
 
-This repository contains the **MuViS** codebase - dataset preprocessing, unified time-series I/O, configuration driven experiment runners and logging utilities for reproducible benchmarking across datasets. The corresponding paper is available at: \<PLACEHOLDER>
+This repository contains the **MuViS** codebase - dataset preprocessing, unified time-series I/O, configuration driven experiment runners and logging utilities for reproducible benchmarking across datasets. The corresponding paper is available at: <https://arxiv.org/abs/2603.24602>
 
 > Abstract: Virtual sensing infers hard-to-measure quantities from accessible measurements and is central to perception and control in physical systems. Despite rapid progress from first-principle and hybrid models to modern data-driven methods research remains siloed, leaving no established default approach that transfers across processes, modalities, and sensing configurations. We introduce \textsc{MuViS}, a domain-agnostic benchmarking suite for multimodal virtual sensing that consolidates diverse datasets into a unified interface for standardized preprocessing and evaluation. Using this framework, we benchmark representative approaches spanning gradient-boosted decision trees and deep neural network (NN) architectures, and quantify how close current methods come to a broadly useful default. \textsc{MuViS} is released as an open-source, extensible platform for reproducible comparison and future integration of new datasets and model classes.
 
